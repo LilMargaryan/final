@@ -4,6 +4,7 @@
     <meta charset="utf8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        
     <style>
         canvas {
             display: block;
@@ -22,18 +23,22 @@
         body {
             font-family: 'Noto Sans', sans-serif !important;
         }
-    </style>
+        #background{
+            background-color:#006600
+        }
+       
     </style>
 </head>
 
-<body>
+<body id="background">
+
     <table class="table table-hover">
         <thead>
             <tr>
                 <h1>Ծրագրավորում III Երևան</h1>
             </tr>
             <tr>
-                <h1>Անուն Ազգանուն</h1>
+                <h1>Լիլիթ Մարգարյան</h1>
             </tr>
             <tr>
                 <th scope="col">#</th>
@@ -42,23 +47,67 @@
                 <th scope="col">Ծնվել է</th>
             </tr>
         </thead>
+        <h1 id="guyner"></h1>
         <tbody>
             <tr>
                 <th scope="row">1</th>
                 <td scope="row" style="background-color:green;"></td>
-                <td>Կանաչը խոտն է, որը բազմանում է N ցիկլը մեկ,մահանում է երբ նրան ուտում է խոտակերը, կամ այրում է
-                    կրակը, կամ նրան կոխկրտում է գիշատիչը</td>
+                <td>Կանաչը խոտն է, որը բազմանում է 4 ցիկլը մեկ,մահանում է երբ նրան ուտում է խոտակերը, կամ այրում է
+                    կրակը:Այն փոխում է իր գույնը կախված տարվա եղանակից</td>
                 <td id="grassCount"></td>
             </tr>
             <tr>
                 <th scope="row">2</th>
                 <td scope="row" style="background-color:orange;"></td>
-                <td>Դեղինը խոտակերն է, որը բազմանում է N հատ խոտ ուտելուց հետո և մահանում է N հատ չուտելուց հետո, կամ
-                    երբ նրան ուտում է գիշատիչը, կամ երբ նրան այրում է կրակը:</td>
+                <td>Դեղինը խոտակերն է, որը բազմանում է 3 հատ խոտ ուտելուց հետո և մահանում է 10 հատ չուտելուց հետո, կամ
+                    երբ նրան ուտում է գիշատիչը, կամ երբ նրան այրում է կրակը:Տարածվում է միայն դատարկ վանդակների վրայով:Իսկ ձմռանը չեն բազմանում</td>
                 <td id="grassEaterCount"></td>
             </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td scope="row" style="background-color:brown;"></td>
+                <td>Սա գիշատիչն է, որը բազմանում է 23 հատ խոտակեր ուտելուց հետո և մահանում է 53 հատ չուտելուց հետո, կամ
+                    երբ նրան այրում է կրակը:Տարածվում է միայն դատարկ վանդակների վրայով:</td>
+                    <td id="gishatichcounter"></td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td scope="row" style="background-color:white;"></td>
+                <td>Սպիտակը բնապահպանն է, ով անմահ է եվ սկզբում անշարժ է,իսկ երբ խոտերի թիվը 20-ից պակաս է դառնում սկսում է շարժվել եվ նոր խոտ ստեղծել</td>
+                <td id="buys"></td>
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td scope="row" style="background-color:blue;"></td>
+                <td>Կապույտը կենդանապահպանն  է, ով անմահ է եվ սկզբում անշարժ է,իսկ երբ խոտակերների թիվը 4-ից պակաս է դառնում սկսում է շարժվել եվ նոր խոտակեր ստեղծել</td>
+                <td id="kendani"></td>
+            </tr>
+            <tr>
+                <th scope="row">6</th>
+                <td scope="row" style="background-color:#ff3333;"></td>
+                <td>Սա Բալանսապահպանն  է,ստեղծված աշխարհում բալանս պահպանելու համար եվ որպեսզի այն լինի անվերջ: Այն նույնպես անմահ է եվ սկսում է շարժվել,երբ գիշատիչների թիվը լինում է 2-ից պակաս
+                   </td>
+                   <td id="balans"></td>
+            </tr>
         </tbody>
+        
     </table>
+   
+         
+         
+    <style>
+       p  {
+  color: #66ffcc;
+  font-family: courier;
+  font-size:50px;
+  margin-left: 200px;
+  margin-bottom: 0;
+}
+#clickMe{
+    margin-left: 450px;
+    margin-top:-50px;
+}
+    </style>
     <script src="p5.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="script.js"></script>
